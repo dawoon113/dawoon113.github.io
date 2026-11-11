@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dawoon Jeong</title>
+<meta name="description" content="Dawoon Jeong — Assistant Professor of Agricultural Economics, Clemson University. Water economics, experimental market design, discrete choice experiments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1f2328;
+    --muted: #5b6470;
+    --rule: #e3e6ea;
+    --accent: #522d80;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+
+  /* Top nav */
+  nav.top {
+    position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.96);
+    border-bottom: 1px solid var(--rule); backdrop-filter: blur(6px);
+  }
+  nav.top .container { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  nav.top .name { font: 600 17px "Source Serif 4", Georgia, serif; color: var(--ink); }
+  nav.top .name:hover { text-decoration: none; }
+  nav.top .menu a { color: var(--muted); font-size: 14px; margin-left: 22px; }
+  nav.top .menu a:hover { color: var(--accent); text-decoration: none; }
+
+  /* Header */
+  header.intro { padding: 64px 0 48px; border-bottom: 1px solid var(--rule); }
+  header.intro .container { display: flex; justify-content: space-between; align-items: center; gap: 48px; }
+  header h1 { font: 600 40px/1.15 "Source Serif 4", Georgia, serif; margin: 0 0 8px; }
+  .role { color: var(--muted); font-size: 16px; line-height: 1.55; margin: 0 0 16px; }
+  .role strong { color: var(--ink); font-weight: 500; }
+  .contact { font-size: 14.5px; color: var(--muted); margin: 0 0 16px; }
+  .links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .links a {
+    display: inline-block; font-size: 13.5px; font-weight: 500; padding: 5px 12px;
+    border: 1px solid var(--rule); border-radius: 999px; color: var(--ink);
+  }
+  .links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .photo {
+    width: 180px; height: 180px; border-radius: 50%; object-fit: cover; flex-shrink: 0; display: block;
+    background: #f1f2f4; color: var(--muted);
+    font: 600 54px/180px "Source Serif 4", Georgia, serif; text-align: center;
+  }
+
+  /* Sections: label column + content column */
+  section { display: grid; grid-template-columns: 180px 1fr; gap: 32px; padding: 44px 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 64px; }
+  section:last-of-type { border-bottom: 0; }
+  section h2 {
+    font: 600 13px/1.4 "Inter", sans-serif; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); margin: 4px 0 0; position: sticky; top: 80px; align-self: start;
+  }
+  p { margin: 0 0 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .tags span { font-size: 13.5px; background: #f3f4f6; padding: 4px 10px; border-radius: 4px; }
+
+  /* Entries: meta on left, details on right */
+  .entry { display: grid; grid-template-columns: 112px 1fr; gap: 16px; margin: 0 0 20px; }
+  .entry:last-child { margin-bottom: 0; }
+  .meta { font-size: 13px; color: var(--muted); padding-top: 2px; }
+  .title { font-weight: 600; color: var(--ink); }
+  a.title { color: var(--accent); }
+  .authors { color: var(--muted); font-size: 15px; }
+  .venue { font-size: 14.5px; color: var(--muted); font-style: italic; }
+  h3.sub { font: 600 15px "Inter", sans-serif; margin: 0 0 14px; color: var(--ink); }
+  .group + .group { margin-top: 30px; }
+
+  .legend { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+  .authors b { color: var(--ink); font-weight: 600; }
+  footer { color: var(--muted); font-size: 13px; padding: 28px 0 48px; }
+
+  @media (max-width: 760px) {
+    nav.top .menu { display: none; }
+    header.intro .container { flex-direction: column-reverse; align-items: flex-start; gap: 24px; }
+    .photo { width: 120px; height: 120px; line-height: 120px; font-size: 38px; }
+    header h1 { font-size: 32px; }
+    section { grid-template-columns: 1fr; gap: 14px; }
+    section h2 { position: static; }
+    .entry { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="container">
+    <a class="name" href="#">Dawoon Jeong</a>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#grants">Grants</a>
+      <a href="#outreach">Outreach</a>
+      <a href="#students">Students</a>
+    </div>
+  </div>
+</nav>
+
+<header class="intro">
+  <div class="container">
+    <div>
+      <h1>Dawoon Jeong</h1>
+      <p class="role">
+        <strong>Assistant Professor</strong>, Agricultural Sciences, Clemson University<br>
+        Water Economist, South Carolina Water Resources Center
+      </p>
+      <p class="contact">
+        dawoonj [at] clemson [dot] edu
+      </p>
+      <ul class="links">
+        <!-- TODO: replace # with your real URLs -->
+        <li><a href="#">CV</a></li>
+        <li><a href="#">Google Scholar</a></li>
+        <li><a href="#">ORCID</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <!-- TODO: put CV.pdf in the repo root and set href="CV.pdf"; fill Scholar/ORCID/LinkedIn URLs -->
+      </ul>
+    </div>
+    <!-- To use a real photo: replace this div with
+         <img class="photo" src="images/profile.jpg" alt="Dawoon Jeong"> -->
+    <div class="photo" aria-label="Dawoon Jeong">DJ</div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section id="about">
+    <h2>About</h2>
+    <div>
+      <p>
+        I am an Assistant Professor (tenure-track) in the Department of Agricultural Sciences at Clemson University
+        and Water Economist at the South Carolina Water Resources Center. My research covers water resource economics,
+        agricultural water management, and coastal community resilience.
+      </p>
+      <p>
+        I use experimental market design, discrete choice experiments, and empirical analysis to study how water is
+        allocated, valued, and governed. Recent work covers irrigation adoption and land values, farmer and consumer
+        acceptance of non-conventional water, and septic and wastewater policy on the South Carolina coast.
+      </p>
+      <p>
+        I received my Ph.D. (2023) and M.S. (2018) in Agricultural Economics from Purdue University, where my dissertation
+        received the department's Outstanding PhD Dissertation Award. Before that, I earned a B.S. in Civil and
+        Environmental Engineering from Yonsei University.
+      </p>
+      <div class="tags">
+        <span>Water resource economics</span>
+        <span>Agricultural water management</span>
+        <span>Coastal resilience</span>
+        <span>Experimental economics</span>
+        <span>Discrete choice experiments</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div>
+      <p class="legend">† corresponding author &nbsp;·&nbsp; * student co-author</p>
+
+      <div class="group">
+        <h3 class="sub">Peer-Reviewed Publications</h3>
+        <div class="entry">
+          <div class="meta">2026</div>
+          <div><a class="title" href="https://doi.org/10.1038/s41598-026-60961-5">Do all freshwater ponds have similar chemical traits? Evidence on water-quality characteristics and their potential to support harmful cyanotoxins</a><br><span class="authors">Fatunmbi, M., Sahoo, D., White, S., Scaroni, A.E., <b>Jeong, D.</b>, and Sawyer, C.</span><br><span class="venue">Scientific Reports</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2026</div>
+          <div><a class="title" href="https://doi.org/10.3389/fmars.2026.1819632">Who Should Pay for Septic System Inspection? Homeowner Preferences for Mandatory Inspection at Property Transfer Under Environmental Risk: Evidence from South Carolina</a><br><span class="authors">†<b>Jeong, D.</b>, Motallebi, M., and Scaroni, A.E.</span><br><span class="venue">Frontiers in Marine Science: Marine Affairs and Policy</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2026</div>
+          <div><a class="title" href="https://doi.org/10.1017/age.2026.10036">Are Farmers Willing to Lease Land for Agrivoltaics? The Role of Information</a><br><span class="authors">*Chamberlin, J., †Thayler, A., Silva, F., Vassalos, M., and <b>Jeong, D.</b></span><br><span class="venue">Agricultural and Resource Economics Review</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2026</div>
+          <div><a class="title" href="https://doi.org/10.1017/age.2025.10017">Peer Effects in Irrigation Adoption in South Carolina</a><br><span class="authors">†<b>Jeong, D.</b> and Perez-Quesada, G.</span><br><span class="venue">Agricultural and Resource Economics Review</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2026</div>
+          <div><a class="title" href="https://doi.org/10.21273/HORTSCI19363-26">Evaluation of Economic Viability of Grafted Watermelon Production Under Alternative Planting Dates and Densities</a><br><span class="authors">Nian, Y., †Jatana, B., <b>Jeong, D.</b>, and Willis, D.</span><br><span class="venue">HortScience</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2026</div>
+          <div><a class="title" href="https://doi.org/10.22004/ag.econ.370420">Cost Considerations in Site Selection for Community Gardens in Urban Agriculture</a><br><span class="authors">†<b>Jeong, D.</b>, Li, L., and Perez-Quesada, G.</span><br><span class="venue">Choices</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2025</div>
+          <div><a class="title" href="https://doi.org/10.1142/S2382624X25500171">Alternative Residential Wastewater Management in Coastal South Carolina: A Discrete Choice Experiment Approach</a><br><span class="authors">†<b>Jeong, D.</b>, *Venturini, G., Motallebi, M., and Scaroni, A.E.</span><br><span class="venue">Water Economics and Policy</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2025</div>
+          <div><a class="title" href="https://open.clemson.edu/jscwr/vol10/iss1/2">Assessing Septic Service Availability and Pricing across Coastal South Carolina</a><br><span class="authors">†<b>Jeong, D.</b>, Scaroni, A.E., and Motallebi, M.</span><br><span class="venue">Journal of South Carolina Water Resources</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2020</div>
+          <div><a class="title" href="https://doi.org/10.1016/j.renene.2019.11.061">Stochastic Techno-economic Analysis of Electricity Produced from Poplar Plantations in Indiana</a><br><span class="authors">†<b>Jeong, D.</b>, Tyner, W.E., Meilan, R., Brown, T.R., and Doering, O.C.</span><br><span class="venue">Renewable Energy, 149, 189–197</span></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3 class="sub">Book Chapter</h3>
+        <div class="entry">
+          <div class="meta">2018</div>
+          <div><a class="title" href="https://doi.org/10.1201/b22044">Economic and Policy Implications of Nitrogen Management</a><br><span class="authors">Doering, O., Gramig, B., and <b>Jeong, D.</b></span><br><span class="venue">Book chapter</span></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3 class="sub">Under Review</h3>
+        <div class="entry">
+          <div class="meta">R&amp;R</div>
+          <div><span class="title">Land Value Premiums from Irrigation and the Role of Groundwater Competition: Evidence from South Carolina</span><br><span class="authors">*Eberhart, S.J., †<b>Jeong, D.</b>, Thayer, A., and Silva, F.</span><br><span class="venue">Agricultural and Resource Economics Review</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">Submitted</div>
+          <div><span class="title">Designing Water Conservation Policy Under Water-Demand Uncertainty: Evidence from Mexican Agriculture</span><br><span class="authors">†<b>Jeong, D.</b>, Sesmero, J., and Schoengold, K.</span><br><span class="venue">Agricultural Economics</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">Submitted</div>
+          <div><span class="title">Mitigating Food Consumer Stigma Toward Non-Conventional Water Sources: Evidence on the Limited Role of Textual Cost-Benefit Information</span><br><span class="authors">*Kane, R., †Collart, A., <b>Jeong, D.</b>, Karthikeyan, R., and Amy, G.</span><br><span class="venue">Q Open</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">Submitted</div>
+          <div><span class="title">Evaluation of Urban Stormwater as a Non-Conventional Water Source in Peri-Urban Controlled Environment Agriculture</span><br><span class="authors">Wang, Z., Karthikeyan, R., <b>Jeong, D.</b>, Collart, A., and †Amy, G.</span><br><span class="venue">Environmental Technology &amp; Innovation</span></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3 class="sub">Working Papers</h3>
+        <div class="entry">
+          <div class="meta">Working paper</div>
+          <div><span class="title">Efficiency and Equity of Posted-Price Markets for Irrigation Water</span><br><span class="authors"><b>Jeong, D.</b>, Sesmero, J., and Reeling, C.</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">Working paper</div>
+          <div><span class="title">How Does Communication Increase Contribution? A Perspective on Giving Motivation in Public Good Games</span><br><span class="authors"><b>Jeong, D.</b> and Palm-Forster, L.</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">Working paper</div>
+          <div><span class="title">What are Farmers' Perspectives on Adopting Non-Conventional Water for Irrigation in the Southeastern U.S.?</span><br><span class="authors">*Williamson, V., <b>Jeong, D.</b>, Collart, A., Karthikeyan, R., and Amy, G.</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">In progress</div>
+          <div><span class="title">Commitment Costs and Contract Length: Coastal Homeowner Responses to Saltwater Intrusion</span><br><span class="authors"><b>Jeong, D.</b></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="grants">
+    <h2>Grants</h2>
+    <div>
+      <p>$1.8M in external funding ($985K as PI).</p>
+        <div class="entry">
+          <div class="meta">2025–27</div>
+          <div><span class="title">Social, Environmental, and Economic Benefits and Costs of Integrating Controlled Environment Agriculture and Non-Conventional Water</span><br><span class="venue">USDA NIFA · PI · $649,990</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2025–27</div>
+          <div><span class="title">Identifying Barriers to Irrigation Adoption among Small and Medium-sized Vegetable Farms by Addressing Production Uncertainties in Southeast U.S.</span><br><span class="venue">USDA NIFA · PI · $299,990</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2027–30</div>
+          <div><span class="title">A Human-In-The-Loop Irrigation Decision Support System for Cotton Crops</span><br><span class="venue">USDA NIFA · Co-PI · $800,000</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2024–26</div>
+          <div><span class="title">Estimating Economic Value of Alternative Residential Wastewater Management in Coastal South Carolina</span><br><span class="venue">USGS SC Competitive Water Research · PI · $34,970</span></div>
+        </div>
+        <div class="entry">
+          <div class="meta">2024–26</div>
+          <div><span class="title">Education and Engagement with the Coastal Communities on Harmful Algal Blooms in Stormwater Ponds</span><br><span class="venue">SC Sea Grant Consortium · Co-PI · $11,000</span></div>
+        </div>
+    </div>
+  </section>
+
+  <section id="outreach">
+    <h2>Outreach</h2>
+    <div>
+      <p>
+        I serve as Water Economics Specialist (Extension Associate) with Clemson Cooperative Extension and as Clemson's acting
+        academic delegate to the <a href="https://des.sc.gov/programs/bureau-water/watersc-water-resources-working-group">WaterSC Water Resources Working Group</a>.
+        I am also on the South Carolina team for <a href="https://www.scseagrant.org/riscc/">RISCC</a>
+        (Risks, Impacts, &amp; Strategies for Coastal Communities), together with Delaware and Rhode Island.
+      </p>
+      <div class="entry">
+        <div class="meta">2026</div>
+        <div><a class="title" href="https://waterchats.scseagrant.org/webinar/resilient-waters-session-2-flood/">Resilient Waters, Session 2: Flood</a><br><span class="venue">SC Sea Grant Water Chats webinar series</span></div>
+      </div>
+      <div class="entry">
+        <div class="meta">Speaker</div>
+        <div><a class="title" href="https://www.scseagrant.org/septic-think-tank/">Septic Think Tank</a><br><span class="venue">SC Sea Grant Consortium</span></div>
+      </div>
+      <div class="entry">
+        <div class="meta">2026</div>
+        <div><span class="title">Economic Considerations of the Selected Water Treatment Technologies</span><br><span class="authors"><b>Jeong, D.</b>, Sahoo, D., Nix, H., and White, S.</span><br><span class="venue">Land-Grant Press by Clemson Extension</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="students">
+    <h2>Students</h2>
+    <div>
+      <div class="entry"><div class="meta">Advisor</div><div>Sarah J. Eberhart (M.S.) · Gabriel Venturini (M.S.)</div></div>
+      <div class="entry"><div class="meta">Co-advisor</div><div>Rachel Kane (M.S.) · Victoria Williamson (M.S.)</div></div>
+      <div class="entry"><div class="meta">Committee</div><div>Morolake Fatunmbi (Ph.D.) · Meycel Cabilin Amarille (Ph.D.) · Justin Chamberlin (M.S., 2025)</div></div>
+    </div>
+  </section>
+
+  <footer>Last updated November 2026</footer>
+</main>
+
+</body>
+</html>
