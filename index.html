@@ -29,46 +29,38 @@
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
   .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
 
-  /* Top nav */
-  nav.top {
-    position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.97);
-    border-bottom: 1px solid var(--rule); backdrop-filter: blur(6px);
+  /* Layout: fixed sidebar + scrolling content */
+  .layout { max-width: 1180px; margin: 0 auto; padding: 0 40px; display: flex; gap: 64px; }
+  .side {
+    width: 280px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+    height: 100vh; overflow-y: auto; padding: 56px 0 32px;
   }
-  nav.top .container { display: flex; justify-content: space-between; align-items: center; height: 58px; gap: 24px; }
-  nav.top .name { font: 600 18px "Source Serif 4", Georgia, serif; color: var(--ink); white-space: nowrap; }
-  nav.top .name:hover { text-decoration: none; }
-  nav.top .menu { display: flex; gap: 24px; overflow-x: auto; scrollbar-width: none; }
-  nav.top .menu::-webkit-scrollbar { display: none; }
-  nav.top .menu a { color: var(--muted); font-size: 15px; white-space: nowrap; }
-  nav.top .menu a:hover { color: var(--accent); text-decoration: none; }
-
-  /* Header */
-  header.intro { padding: 72px 0 56px; border-bottom: 1px solid var(--rule); }
-  header.intro .container { display: flex; justify-content: space-between; align-items: center; gap: 48px; }
-  header.intro .container > div:first-child { flex: 1; }
+  .photo {
+    width: 168px; height: 168px; border-radius: 50%; object-fit: cover; display: block;
+    background: #f1f2f4;
+  }
   img.photo { color: transparent; font-size: 0; }
-  header h1 { font: 600 44px/1.12 "Source Serif 4", Georgia, serif; margin: 0 0 12px; letter-spacing: -.01em; }
-  .role { color: var(--muted); font-size: 17px; line-height: 1.6; margin: 0 0 16px; }
+  .side h1 { font: 600 30px/1.2 "Source Serif 4", Georgia, serif; margin: 22px 0 10px; letter-spacing: -.01em; }
+  .role { color: var(--muted); font-size: 15.5px; line-height: 1.55; margin: 0 0 14px; }
   .role strong { color: var(--ink); font-weight: 600; }
-  .contact { font-size: 16px; margin: 0 0 20px; }
-  .links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .contact { font-size: 15.5px; margin: 0 0 16px; }
+  .links { list-style: none; padding: 0; margin: 0 0 26px; display: flex; flex-wrap: wrap; gap: 8px; }
   .links a {
-    display: inline-block; font-size: 14.5px; font-weight: 500; padding: 7px 16px;
+    display: inline-block; font-size: 14px; font-weight: 500; padding: 6px 14px;
     border: 1px solid #d3d7dc; border-radius: 999px; color: var(--ink);
   }
   .links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-  .photo {
-    width: 184px; height: 184px; border-radius: 50%; object-fit: cover; flex-shrink: 0; display: block;
-    background: #f1f2f4; color: var(--faint);
-    font: 600 56px/184px "Source Serif 4", Georgia, serif; text-align: center;
-  }
+  .toc { border-top: 1px solid var(--rule); padding-top: 14px; }
+  .toc a { display: block; color: var(--muted); font-size: 15px; padding: 4px 0 4px 12px; border-left: 2px solid transparent; }
+  .toc a:hover, .toc a.on { color: var(--accent); border-left-color: var(--accent); text-decoration: none; }
+  .content { flex: 1; min-width: 0; padding: 24px 0 0; }
 
   /* Sections: label column + content column */
-  section { display: grid; grid-template-columns: 150px 1fr; gap: 40px; padding: 60px 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 70px; }
+  section { display: block; padding: 48px 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 16px; }
   section:last-of-type { border-bottom: 0; }
   section h2 {
     font: 600 13px/1.5 "Inter", sans-serif; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--accent); margin: 6px 0 0; position: sticky; top: 86px; align-self: start;
+    color: var(--accent); margin: 0 0 22px;
   }
   section > div { max-width: 700px; }
   p { margin: 0 0 18px; }
@@ -98,64 +90,50 @@
 
   footer { color: var(--faint); font-size: 14px; padding: 32px 0 56px; }
 
-  @media (max-width: 760px) {
+  @media (max-width: 900px) {
     body { font-size: 16.5px; }
-    .container { padding: 0 20px; }
-    nav.top .name { display: none; }
-    nav.top .menu { gap: 20px; }
-    header.intro { padding: 40px 0 36px; }
-    header.intro .container { flex-direction: column-reverse; align-items: flex-start; gap: 22px; }
-    .photo { width: 116px; height: 116px; line-height: 116px; font-size: 36px; }
-    header.intro .container > div:first-child { flex: 1; }
-  img.photo { color: transparent; font-size: 0; }
-  header h1 { font-size: 34px; }
-    section { grid-template-columns: 1fr; gap: 18px; padding: 44px 0; }
-    section h2 { position: static; margin: 0; }
+    .layout { display: block; padding: 0 20px; }
+    .side { position: static; width: auto; height: auto; overflow: visible; padding: 36px 0 8px; border-bottom: 1px solid var(--rule); }
+    .photo { width: 116px; height: 116px; }
+    .toc { display: none; }
+    section { padding: 40px 0; }
     .entry { grid-template-columns: 1fr; gap: 4px; margin-bottom: 24px; }
     h3.sub { font-size: 19px; }
-    .int-grid { grid-template-columns: 1fr; }
   }
+
 </style>
 </head>
 <body>
 
-<nav class="top">
-  <div class="container">
-    <a class="name" href="#">Dawoon Jeong</a>
-    <div class="menu">
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#grants">Grants</a>
-      <a href="#research">Research</a>
-      <a href="#outreach">Outreach</a>
-    </div>
-  </div>
-</nav>
-
-<header class="intro">
-  <div class="container">
-    <div>
-      <h1>Dawoon Jeong</h1>
-      <p class="role">
-        <strong>Assistant Professor</strong>, Agricultural Sciences, Clemson University<br>
+<div class="layout">
+<aside class="side">
+  <img class="photo" src="headshot.png" alt="Dawoon Jeong">
+  <h1>Dawoon Jeong</h1>
+  <p class="role">
+        <strong>Assistant Professor</strong><br>Agricultural Sciences, Clemson University<br>
         Water Economist, South Carolina Water Resources Center
       </p>
-      <p class="contact">
+  <p class="contact">
         <a href="mailto:dawoonj@clemson.edu">dawoonj@clemson.edu</a>
       </p>
-      <ul class="links">
-        <!-- TODO: replace # with your real URLs -->
+  <ul class="links">
         <li><a href="CV.pdf">CV</a></li>
         <li><a href="https://scholar.google.com/citations?user=pD55qI0AAAAJ&amp;hl=en">Google Scholar</a></li>
         <li><a href="https://orcid.org/0009-0009-0687-5709">ORCID</a></li>
         <li><a href="https://www.linkedin.com/in/dawoon-jeong/">LinkedIn</a></li>
       </ul>
-    </div>
-    <img class="photo" src="headshot.png" alt="Dawoon Jeong">
-  </div>
-</header>
+  <nav class="toc">
+      <a href="#interests">Interests</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#grants">Grants</a>
+      <a href="#research">Research</a>
+      <a href="#outreach">Outreach</a>
+    </nav>
+</aside>
 
-<main class="container">
+
+<main class="content">
 
   <section id="interests">
     <h2>Interests</h2>
@@ -364,6 +342,20 @@
 
   <footer>Last updated November 2026</footer>
 </main>
+</div>
 
+<script>
+  (function(){
+    var links=[].slice.call(document.querySelectorAll('.toc a'));
+    var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+    function onScroll(){
+      var y=window.scrollY+120, cur=0;
+      secs.forEach(function(sec,i){ if(sec && sec.offsetTop<=y) cur=i; });
+      if((window.innerHeight+window.scrollY)>=document.body.scrollHeight-4) cur=secs.length-1;
+      links.forEach(function(a,i){ a.classList.toggle('on', i===cur); });
+    }
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  })();
+</script>
 </body>
 </html>
