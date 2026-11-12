@@ -46,13 +46,10 @@
   header.intro { padding: 72px 0 56px; border-bottom: 1px solid var(--rule); }
   header.intro .container { display: flex; justify-content: space-between; align-items: center; gap: 48px; }
   header.intro .container > div:first-child { flex: 1; }
+  img.photo { color: transparent; font-size: 0; }
   header h1 { font: 600 44px/1.12 "Source Serif 4", Georgia, serif; margin: 0 0 12px; letter-spacing: -.01em; }
   .role { color: var(--muted); font-size: 17px; line-height: 1.6; margin: 0 0 16px; }
   .role strong { color: var(--ink); font-weight: 600; }
-  .interests { margin: 4px 0 22px; }
-  .int-label { display: block; font-size: 12.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-  .interests ul { list-style: none; padding: 0 0 0 14px; margin: 0; border-left: 3px solid var(--accent); }
-  .interests li { font-size: 16.5px; font-weight: 500; color: var(--ink); line-height: 1.75; }
   .contact { font-size: 16px; margin: 0 0 20px; }
   .links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
   .links a {
@@ -75,6 +72,9 @@
   }
   section > div { max-width: 700px; }
   p { margin: 0 0 18px; }
+
+  .int-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
+  .int-grid li { font-size: 18px; font-weight: 500; line-height: 1.45; padding-left: 16px; border-left: 3px solid var(--accent); }
 
   /* Sub-group headings */
   h3.sub {
@@ -107,11 +107,13 @@
     header.intro .container { flex-direction: column-reverse; align-items: flex-start; gap: 22px; }
     .photo { width: 116px; height: 116px; line-height: 116px; font-size: 36px; }
     header.intro .container > div:first-child { flex: 1; }
+  img.photo { color: transparent; font-size: 0; }
   header h1 { font-size: 34px; }
     section { grid-template-columns: 1fr; gap: 18px; padding: 44px 0; }
     section h2 { position: static; margin: 0; }
     .entry { grid-template-columns: 1fr; gap: 4px; margin-bottom: 24px; }
     h3.sub { font-size: 19px; }
+    .int-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -138,15 +140,6 @@
         <strong>Assistant Professor</strong>, Agricultural Sciences, Clemson University<br>
         Water Economist, South Carolina Water Resources Center
       </p>
-      <div class="interests">
-        <span class="int-label">Research interests</span>
-        <ul>
-          <li>Behavioral and Experimental Economics</li>
-          <li>Consumer and Producer Choice under Uncertainty</li>
-          <li>Market Design</li>
-          <li>Water Resource Economics</li>
-        </ul>
-      </div>
       <p class="contact">
         <a href="mailto:dawoonj@clemson.edu">dawoonj@clemson.edu</a>
       </p>
@@ -163,6 +156,18 @@
 </header>
 
 <main class="container">
+
+  <section id="interests">
+    <h2>Interests</h2>
+    <div>
+      <ul class="int-grid">
+        <li>Behavioral and Experimental Economics</li>
+        <li>Consumer and Producer Choice under Uncertainty</li>
+        <li>Market Design</li>
+        <li>Water Resource Economics</li>
+      </ul>
+    </div>
+  </section>
 
   <section id="about">
     <h2>About</h2>
